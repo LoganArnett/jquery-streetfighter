@@ -1,0 +1,76 @@
+body {
+  background: black;
+}
+
+section.main {
+  background: whitesmoke;
+  height: 70vh;
+  margin-top: 15vh;
+  position: relative;
+}
+
+div.ryu {
+  width: 80%;
+  margin: 0 auto;
+}
+
+div.hadouken {
+  width: 10%;
+  position: absolute;
+  top: 28%;
+  left: 42%;
+  height: 20%;
+  -webkit-animation-duration: 0.8s; /* Chrome, Safari, Opera */
+  -webkit-animation-fill-mode: forwards;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+  display: none;
+}
+
+.throw {
+  -webkit-animation-name: hadouken; /* Chrome, Safari, Opera */
+  animation-name: hadouken; /* Chrome, Safari, Opera */
+}
+
+.fighter-logo, .jquery-logo, .created-with, .controls {
+  display: none;
+}
+
+.created-with {
+  font-family: 'Lato', sans-serif;
+  font-size: 3rem;
+}
+
+.controls {
+  font-family: 'Josefin-slab', sans-serif;
+  font-size: 1.5rem;
+}
+
+.top {
+  width: 60%;
+  float: left;
+}
+
+.bottom {
+  width: 60%;
+  float: right;
+}
+
+.intros {
+  width: 40%;
+  position: absolute;
+  top: 20%;
+  right: 10%;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes hadouken {
+    from {left: 45%; opacity: 1;}
+    to {left: 70%; opacity: 0; display: none;}
+}
+
+/* Standard syntax */
+@keyframes hadouken {
+    from {left: 45%; opacity: 1;}
+    to {left: 70%; opacity: 0; display: none;}
+}
