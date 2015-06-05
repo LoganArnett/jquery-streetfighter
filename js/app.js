@@ -10,21 +10,22 @@ $(document).on('ready', function(){
   });
 // Throwing position on mousedown
 $('div.ryu img').on('mousedown', function(){
+  $('.sound-effect')[0].play();
   $('div.ryu img').attr('src', 'images/ryu-throwing-hadouken.png');
   $('div.hadouken').show().addClass('throw');
-  $('.sound-effect').attr('src', 'sound/hadouken.mp3');
 });
 // Revert on mouseup
 $('div.ryu img').on('mouseup', function(){
+  $('.sound-effect')[0].load();
   $('div.ryu img').attr('src', 'images/ryu-ready-position.gif');
   $('div.hadouken').hide().removeClass('throw');
-  $('.sound-effect').attr('src', '');
 });
 // Cool pose gif on 'x'
 $('body').on('keydown', function(e){
   if(e.which == 88){
     e.preventDefault();
-    console.log('Hello')
+    $('.theme-song')[0].pause();
+    $('.cool')[0].play();
     $('div.ryu img').attr('src', 'images/ryu-cool.gif');
   }
   else {
@@ -34,6 +35,8 @@ $('body').on('keydown', function(e){
 });
 $('body').on('keyup', function(){
     $('div.ryu img').attr('src', 'images/ryu-ready-position.gif');
+    $('.cool')[0].pause();
+    $('.theme-song')[0].play();
 });
 
 });
